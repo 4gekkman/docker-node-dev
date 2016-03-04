@@ -5,7 +5,6 @@
 ##  
 ##  1. Базовый образ и разработчики
 ##  2. Установить bower и gulp глобально
-##  3. Запустить node
 ##
 
 # 1. Базовый образ и разработчики
@@ -16,6 +15,5 @@ MAINTAINER German Manvelov <4gekkman@gmail.com>
 RUN npm install -g gulp 
 RUN npm install -g bower
 
-3. Запустить node
-CMD [ "node" ]
+
 
