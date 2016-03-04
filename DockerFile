@@ -1,0 +1,17 @@
+##############################
+## 4gekkman/docker-node-dev ##
+##############################
+## Оглавление
+##  
+##  1. Базовый образ и разработчики
+##  2. Установить bower и gulp глобально
+##
+
+# 1. Базовый образ и разработчики
+FROM node:latest
+MAINTAINER German Manvelov <4gekkman@gmail.com>
+
+# 2. Установить bower и gulp глобально
+RUN npm install -g gulp 
+RUN npm install -g bower
+
