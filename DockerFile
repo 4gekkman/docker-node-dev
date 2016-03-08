@@ -15,9 +15,16 @@ MAINTAINER German Manvelov <4gekkman@gmail.com>
 RUN npm install -g gulp 
 RUN npm install -g bower
 
+# 3. Установить необходимые пакеты
+RUN apt-get update && apt-get install -y \
 
+    curl \
+    cron \
+    supervisor
+    
+# 4. Создать следующие каталоги, если они отсутствуют    
+RUN mkdir -p /var/log/supervisor
 
-
-
-
+# 5. Назначить cmd по умолчанию, запускающую supervisord
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisor.ini"]
 
