@@ -34,7 +34,7 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 RUN apt-get update && apt-get -y upgrade
 
 # 6. Установить bower и gulp глобально
-RUN npm install -g gulp 
+RUN npm install -g gulp#4.0 
 RUN npm install -g bower
 
 # 7. Установить необходимые пакеты
