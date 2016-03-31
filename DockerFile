@@ -54,8 +54,12 @@ CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/websocket.ini"]
 
 # 10. Настроить SSH-демона
   
-  # 10.1. Разрешить root-логин без пароля по SSH к контейнеру внутри сети
+  # 10.1. Поставить пароль админу
+  RUN mkdir /var/run/sshd
+  RUN echo 'root:password' | chpasswd
+  
+  # 10.2. Разрешить root-логин без пароля по SSH к контейнеру внутри сети
   RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-  # 10.2. SSH login fix. Otherwise user is kicked off after loginи
+  # 10.3. SSH login fix. Otherwise user is kicked off after loginи
   RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
