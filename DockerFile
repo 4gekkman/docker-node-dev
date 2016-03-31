@@ -55,7 +55,6 @@ CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/websocket.ini"]
 # 10. Настроить SSH-демона
   
   # 10.1. Поставить пароль админу
-  RUN mkdir /var/run/sshd
   RUN echo 'root:password' | chpasswd
   
   # 10.2. Разрешить root-логин без пароля по SSH к контейнеру внутри сети
