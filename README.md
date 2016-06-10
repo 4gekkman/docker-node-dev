@@ -1,4 +1,4 @@
-# Docker image - <имя образа>
+# Docker image - docker-node-dev
 ---
 ## Оглавление
 
