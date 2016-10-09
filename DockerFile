@@ -50,7 +50,7 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir -p /var/log/supervisor
 
 # 9. Назначить cmd по умолчанию, запускающую supervisord
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/websocket.ini"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor.d/supervisor-docker-node-dev.ini"]
 
 # 10. Настроить SSH-демона
   
